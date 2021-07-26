@@ -8,7 +8,8 @@ import { GoalDetailComponent } from './goal-detail/goal-detail.component';
 import { DateCountPipe } from './date-count.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
-import { GoalListComponent } from './goal-list/goal-list.component';
+ 
+import { GoalService } from './goal-service/goal.service';
  
 @NgModule({
   declarations: [
@@ -17,16 +18,18 @@ import { GoalListComponent } from './goal-list/goal-list.component';
     GoalDetailComponent,
     DateCountPipe,
     GoalFormComponent,
-    GoalListComponent,
+    
      
      
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    
+
   ],
-  providers: [],
+  providers: [GoalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

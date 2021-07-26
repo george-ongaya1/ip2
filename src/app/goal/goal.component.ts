@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
-
-
+ 
 @Component({
   selector: 'app-goal',
   templateUrl: './goal.component.html',
-  styleUrls: ['./goal.component.css']
+  styleUrls: ['./goal.component.css'],
+  providers:[GoalService]
 })
 export class GoalComponent implements OnInit {
-
- 
+  goals: any;addNewGoal(goal: any) {
+    let goalLength = this.goals.length;
+    goal.id = goalLength + 1;
+    goal.completeDate = new Date(goal.completeDate)
+    this.goals.push(goal)
+  }
   toggleDetails(index: any) {
     this.goals[index].showDescription = !this.goals[index].showDescription;
   }
+
+  
   completeGoal(isComplete: any, index: any) {
     if (isComplete) {
       this.goals.splice(index, 1);
@@ -27,26 +34,8 @@ export class GoalComponent implements OnInit {
       }
     }
   }
-  addNewGoal(goal: any) {
-    let goalLength = this.goals.length;
-    goal.id = goalLength + 1;
-    goal.completeDate = new Date(goal.completeDate)
-    this.goals.push(goal)
-  }
-
-  highlighter(index: number) {
-    const check = this.goals[index].upvote;
-    if (this.goals.length > 0) {
-
-      const votes: number[] = [];
-      this.goals.forEach(goals => votes.push(goals.upvote));
-      if (check === Math.max(...votes)) {
-         
-      }
-      return;
-    }
-
-  }
+ 
+ 
 
   constructor() { }
 

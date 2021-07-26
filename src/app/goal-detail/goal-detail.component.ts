@@ -1,4 +1,4 @@
-import { Quote } from '@angular/compiler';
+
 import { Component, Input,OnInit ,Output,EventEmitter} from '@angular/core';
 import { Goal } from '../goal';
  

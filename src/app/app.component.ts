@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Goal } from './goal';
+import { Goals } from './goal-list/goal-list.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
