@@ -14,6 +14,16 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'goals', component: GoalComponent},
+  { path: 'about', component: AboutComponent},
+  { path:'**', component:NotFoundComponent},
+  { path: '', redirectTo:"/goals", pathMatch:"full"},
+
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +33,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     GoalFormComponent,
     AboutComponent,
     NavbarComponent,
+    NotFoundComponent,
     
      
      
