@@ -37,7 +37,7 @@ export class GoalComponent implements OnInit {
  
  
 
-  constructor() { }
+  constructor(goalService:GoalService) {  this.goals = goalService.getGoals() }
 
   ngOnInit() {
   }
