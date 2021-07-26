@@ -10,7 +10,8 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';  
 import { GoalService } from './goal-service/goal.service';
- 
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { GoalService } from './goal-service/goal.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
     
 
   ],
