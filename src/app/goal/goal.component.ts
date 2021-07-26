@@ -2,20 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { GoalService } from '../goal-service/goal.service';
 import { Goal } from '../goal';
 import { AlertService } from '../alert-service/alert.service';
-import { HttpClient
- } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import { Quote } from '../quote-class/quote';
 
 
- @Component({
+@Component({
   selector: 'app-goal',
   templateUrl: './goal.component.html',
   styleUrls: ['./goal.component.css'],
-  providers:[GoalService]
+  providers: [GoalService]
 })
 export class GoalComponent implements OnInit {
   goals: any;
   alertService: AlertService = new AlertService;
-  
+  quote: any;
+
   addNewGoal(goal: any) {
     let goalLength = this.goals.length;
     goal.id = goalLength + 1;
@@ -26,7 +27,7 @@ export class GoalComponent implements OnInit {
     this.goals[index].showDescription = !this.goals[index].showDescription;
   }
 
-  
+
   completeGoal(isComplete: any, index: any) {
     if (isComplete) {
       this.goals.splice(index, 1);
@@ -42,13 +43,23 @@ export class GoalComponent implements OnInit {
       }
     }
   }
- 
- 
 
-  constructor(goalService:GoalService) {  this.goals = goalService.getGoals()
-    this.alertService=this.alertService; }
+
+
+  constructor(goalService: GoalService,alertService:AlertService, private http:HttpClient) {
+    this.goals = goalService.getGoals()
+    this.alertService = this.alertService;
+  }
 
   ngOnInit() {
+    interface ApiResponse{
+      author:string;
+      quote:string;
+    }
+
+    this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe((data: { author: string; quote: string; })=>{
+      this.quote = new Quote(data.author, data.quote)
+    })
   }
 
 
