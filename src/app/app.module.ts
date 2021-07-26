@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { GoalService } from './goal-service/goal.service';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     GoalDetailComponent,
     DateCountPipe,
     GoalFormComponent,
+    AboutComponent,
     
      
      
