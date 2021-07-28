@@ -1,4 +1,4 @@
-# Ouotes App
+# Gitsearch App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
@@ -8,10 +8,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  
 ## Description
 
- Ouotes App is a web based application that enables people to write out qoutes on a web application,
- using angular directives and components to manipulate data and style it various ways.
+`Gitserach app` is a single page application for searching github users and repositories. 
+The site uses the Github API to perform searches on Github, and display the results to the users.
 
-https://george-ongaya1.github.io/ip2/
+https://george-ongaya1.github.io/ip2/goals
 
 ## Setup/Installation Requirements
 
