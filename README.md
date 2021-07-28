@@ -39,7 +39,7 @@ If you have any questions or contributions, please reach me at.
 
 ### License
 
-- Copyright (c) 2021 by George Ongaya (https://george-ongaya1.github.io/leo/)
+- Copyright (c) 2021 by George Ongaya (https://github.com/george-ongaya1/ip2.git)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
